@@ -68,13 +68,6 @@ def group_by_category(items: list[dict]) -> dict[str, list[str]]:
 
 
 def merge_configs(default_config: dict, user_config: dict) -> dict:
-    """
-    3.2 Объединение настроек.
-    Принимает дефолтные и пользовательские настройки.
-    Возвращает новый словарь, где пользовательские настройки переопределяют дефолтные,
-    но параметры, отсутствующие в user_config, сохраняют значения из default_config.
-    Исходные словари мутировать нельзя.
-    """
     result = {}
 
     for item in default_config.keys():
