@@ -24,9 +24,9 @@ def test_elements_text_box():
 def test_elements_check_box():
     open_elements()
 
-    browser.element('[href = "/checkbox"]').click()
+    browser.element('[href="/checkbox"]').click()
 
-    plus_button = '[class="rc-tree-switcher rc-tree-switcher_close"]'
+    plus_button = '.rc-tree-switcher'
     browser.all('[role="treeitem"]').element_by(have.text("Home")).element(plus_button).click()
     browser.all('[role="treeitem"]').element_by(have.text("Desktop")).element(plus_button).click()
     browser.all('[role="treeitem"]').element_by(have.text("Documents")).element(plus_button).click()
