@@ -1,9 +1,7 @@
-from selene import browser, have, be
+from selene import browser, have, be, by
 
 
 def test_complete_todo():
-
-    browser.config.base_url = 'https://todomvc.com/examples/react/dist/'
     browser.open('/')
 
     browser.element('[data-testid=text-input]').type('asd').press_enter()
@@ -11,4 +9,4 @@ def test_complete_todo():
     browser.element('[data-testid=text-input]').type('ced').press_enter()
     browser.all('[data-testid=todo-item-label]').should(have.size(3))
 
-    browser.quit()
+    assert len(browser.driver.find_elements(*by.css('[data-testid=todo-item-label]')))==3
